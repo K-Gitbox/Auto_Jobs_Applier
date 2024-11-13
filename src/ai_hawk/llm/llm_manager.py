@@ -628,6 +628,6 @@ class GPTAnswerer:
         score = re.search(r'Score: (\d+)', output).group(1)
         reasoning = re.search(r'Reasoning: (.+)', output, re.DOTALL).group(1)
         logger.info(f"Job suitability score: {score}")
-        if int(score) < 7 :
+        if int(score) < 4 :
             logger.debug(f"Job is not suitable: {reasoning}")
-        return int(score) >= 7
+        return int(score) >= 4
